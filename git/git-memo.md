@@ -9,7 +9,7 @@
 ※""内はコミットメッセージ
 6. git branch -M main
 7. git remote add origin https://github.com/userid/repository-name.git  
-※1のutl.git
+※1のurl.git
 8. git push -u origin main
 
 ## git 2回目以降

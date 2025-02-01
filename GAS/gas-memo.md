@@ -1,0 +1,3 @@
+### createHtmlOutputFromFileとcreateTemplateFromFileの使いどころ
+createHtmlOutputFromFile … 静的なhtmlファイルでOKの場合  
+createTemplateFromFile … 変数をhtmlに渡したり、htmlファイル内でサーバーサイドの処理を呼んだりして動的にhtmlを変える場合  

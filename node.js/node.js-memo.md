@@ -9,12 +9,12 @@ $ npm init
 2. xxxappディレクトリ下にjsファイル作成
 3. cd xxxapp で 実行  
 ```
-node test.js
+$ node test.js
 ```
 
 ## node.jsアプリでJSONの読み込み
 1. モジュール形式の指定  
-辞書のJSONファイルの読み込みにECMAScriptモジュールを使用できるようにするため、以下のコマンドでpackage.jsonにtypeフィールドを追加してモジュール形式を指定する。
+JSONファイルの読み込みにECMAScriptモジュールを使用できるようにするため、以下のコマンドでpackage.jsonにtypeフィールドを追加してモジュール形式を指定する。
 ```
 $ npm pkg set type=module
 ```
