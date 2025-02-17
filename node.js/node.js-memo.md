@@ -1,4 +1,6 @@
-## node.jsでコンソールアプリ作成
+## node.js memo
+
+### node.jsでコンソールアプリ作成
 
 1. ディレクトリ作成、package.jsonの作成  
 ```
@@ -12,7 +14,7 @@ $ npm init
 $ node test.js
 ```
 
-## node.jsアプリでJSONの読み込み
+### node.jsアプリでJSONの読み込み
 1. モジュール形式の指定  
 JSONファイルの読み込みにECMAScriptモジュールを使用できるようにするため、以下のコマンドでpackage.jsonにtypeフィールドを追加してモジュール形式を指定する。
 ```

@@ -1,4 +1,6 @@
-## git 最初のpush
+## git memo
+
+### git 最初のpush
 1. githubリポジトリ作成  
 ※url:https://github.com/userid/repository-name
 2. cd 作業ディレクトリ
@@ -12,7 +14,7 @@
 ※1のurl.git
 8. git push -u origin main
 
-## git 2回目以降
+### git 2回目以降
 1. git add .  
 ※ファイルを選択する場合は.をファイル名に
 2. git commit -m "update-xxx"
