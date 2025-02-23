@@ -186,59 +186,6 @@ print("終了")
 終了
 ```
 
-### リスト（配列）
-#### リストを繰り返す  
-```
-a = [1, 2, 3]
-
-for x in a:
-    print(x)
-
-for i in range(len(a)):
-    print(a[i])
-```
-出力結果  
-```
-1
-2
-3
-1
-2
-3
-```
-
-#### 入力からリストを作る
-```
-# 文字列
-a = input().split()
-
-# 数値
-a = list(map(int, input().split()))
-```
-#### リストを出力する
-```
-a = [9, 9, 7, 3]
-
-# a の要素を空白区切りで出力する
-print(*a)
-
-# a の要素を改行区切りで出力する
-for x in a:
-    print(x)
-```
-#### リストに値を追加・削除する
-```
-a = [0]
-
-# 末尾に追加
-a.append(1)
-print(a)    # [0, 1]
-
-# 末尾から削除
-a.pop()
-print(a)    # [0]
-```
-
 ### 文字列
 #### 文字列の長さ
 ```
@@ -248,7 +195,7 @@ len("abc")
 ```
 s = "abc"
 for x in s:
-print(x)
+    print(x)
 ```
 出力結果  
 ```
@@ -274,10 +221,124 @@ print("a b c".split())             # ['a', 'b', 'c']
 print(", ".join(["a", "b", "c"]))  # a, b, c
 ```
 
-### 組込関数
-#### sum
+
+### リスト（配列）
+#### リストを繰り返す  
 ```
-print(sum([1, 3, -5, 2]))
+a = [1, 2, 3] 
+
+for x in a:
+    print(x)
+
+for i in range(len(a)):
+    print(i, "番目の要素は", a[i], "です")
+
+for i,v in enumerate(a):
+    print(i, "番目の要素は", v, "です。")
+```
+出力結果  
+```
+1
+2
+3
+0 番目の要素は 1 です
+1 番目の要素は 2 です
+2 番目の要素は 3 です
+0 番目の要素は 1 です。
+1 番目の要素は 2 です。
+2 番目の要素は 3 です。
+```
+
+#### 二次元のリストを繰り返す  
+```
+a = [[0, 1], [2, 3], [4,5]] 
+
+for x, y in a:
+    print(x, y)
+```
+出力結果  
+```
+0 1
+2 3
+4 5
+```
+
+#### 入力からリストを作る
+```
+# 文字列
+a = input().split()
+
+# 数値
+a = list(map(int, input().split()))
+b = [int(c) for c in input().split()]
+```
+
+#### 入力から二次元配列を取得する
+```
+N, M = list(map(int, input().split()))
+
+# for文
+a = []
+for i in range(N):
+    a.append(list(map(int, input().split())))
+
+print(a)
+
+# 内包表記
+b = [list(map(int, input().split())) for _ in range(N)]
+print(b)
+```
+入力  
+```
+2 3
+1 3 5
+2 4 6
+10 30 50
+20 40 60
+```
+出力  
+```
+[[1, 3, 5], [2, 4, 6]]
+[[10, 30, 50], [20, 40, 60]]
+```
+
+#### リストを出力する
+```
+a = [9, 9, 7, 3]
+
+# a の要素を空白区切りで出力する
+print(*a)
+
+# a の要素を改行区切りで出力する
+for x in a:
+    print(x)
+```
+
+#### スライス
+```
+a = [3, 1, 4, 1, 5]
+
+# a[1] から a[3] までの 3 要素からなるリストを作る
+print(a[1:4])   # [1, 4, 1]
+
+# a[0:5] を作る (リストを複製する)
+print(a[:])     # [3, 1, 4, 1, 5]
+
+# a[1:4] から 2 要素ごとに取り出したリストを作る
+print(a[1:4:2])  # [1, 1]
+``` 
+
+#### append, pop
+```
+a = [0]
+
+# 末尾に追加
+a.append(1)
+print(a)    # [0, 1]
+
+# 末尾から削除
+a.pop()
+print(a)    # [0]
 ```
 
 #### sort, reverse
@@ -291,6 +352,7 @@ l.reverse()
 print(l)      # [3, 2, 1, -5]
 ```
 
+### 組込関数
 #### sorted（非破壊）
 ```
 l = [1, 3, -5, 2]
@@ -298,6 +360,11 @@ new_l = sorted(l)
 
 print(l)      # [1, 3, -5, 2]
 print(new_l)  # [-5, 1, 2, 3]
+```
+
+#### sum
+```
+print(sum([1, 3, -5, 2]))  # 1
 ```
 
 #### all, any
@@ -309,4 +376,19 @@ print(all([v>0 for v in l]))    # False
 
 # l に偶数が含まれるか？
 print(any([v%2==0 for v in l])) # True
+```
+
+### 内包表記
+```
+# 入力から数値リストを取得
+b = [int(c) for c in input().split()]
+
+# if文によるフィルタリング
+l = [1, 2, 3, 4]
+
+l_only_even = [v for v in l if v%2==0]
+l_only_odd = [v for v in l if v%2==1]
+
+print(l_only_even)  # [2, 4]
+print(l_only_odd)   # [1, 3]
 ```
